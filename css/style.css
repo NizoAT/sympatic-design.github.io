@@ -90,4 +90,88 @@
    .fd-Nav {
         background-color: rgb(212 212 216 / 0.3);
       }
+   .b-hero {
+        position: relative;
+        padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+        --tw-aspect-w: 4;
+      }
+   .b-hero > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    }
+
+    .bg-hero {
+        background-color: rgb(255 255 255 / 0.1);
+      }
+    .lf-hero {
+        --tw-backdrop-blur: blur(8px);
+        -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+                backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+      }
+    .jf-hero {
+        --tw-ring-color: rgb(9 9 11 / 0.1);
+      }
+    .cf-hero {
+        --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      }
+    .hover\:zf-hero:hover {
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      }
+    .bf-hero {
+        --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+        --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      }
+      .\[mask-image\:_linear-gradient\(to_right\2c transparent_0\2c _black_128px\2c _black_calc\(100\%-128px\)\2c transparent_100\%\)\] {
+        -webkit-mask-image: linear-gradient(to right,transparent 0, black 128px, black calc(100% - 128px),transparent 100%);
+        mask-image: linear-gradient(to right,transparent 0, black 128px, black calc(100% - 128px),transparent 100%);
+      }
+      .ob-hero {
+        animation: tw-infinite-scroll 25s linear infinite;
+      }
+      .\[\&_img\]\:tw-max-w-none img {
+        max-width: none;
+      }
+      .\[\&_li\]\:tw-mx-4 li {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+      @media (min-width: 768px) {
+        .md\:\[\&_li\]\:tw-mx-8 li {
+          margin-left: 2rem;
+          margin-right: 2rem;
+        }
+      }
+      .carousel-border-color {
+        --tw-border-opacity: 1;
+        border-color: rgb(228 228 231 / var(--tw-border-opacity));
+      }
+      .df-carousel {
+        --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      }
+      .we-carousel {
+        --tw-text-opacity: 1;
+        color: rgb(82 82 91 / var(--tw-text-opacity));
+      }
+
+      @keyframes tw-infinite-scroll {
+        from {
+          transform: translateX(0);
+        }
+      
+        to {
+          transform: translateX(-100%);
+        }
+      }
 }

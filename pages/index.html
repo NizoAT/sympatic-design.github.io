@@ -20,7 +20,7 @@
                  <a href="/amiso/">
                     <img src="../images/Logos/SD 2 logo.png" alt="SYMPATIC DESIGN" class="w-[120px]" />
                  </a>
-                 <nav class="hidden lg:ml-[3.5rem] lg:flex lg:gap-x-[1.75rem]" x-data="{ menu }">
+                 <nav class="hidden lg:ml-[3.5rem] sm:flex sm:gap-x-[1.75rem]" x-data="{ menu }">
                     <template x-for="item in menu" :key="item.name">
                        <a
                           x-bind:href="item.href"
@@ -35,13 +35,13 @@
                  
                  <a
                     href="/amiso/signup.html"
-                    class="inline-flex border rounded-md opacity-50 bg-Sd_Orange border-Sd_Orange px-3 py-2 text-md font-medium text-white drop-shadow-md duration-150 hover:opacity-100"
+                    class=" border rounded-md opacity-50 bg-Sd_Orange border-Sd_Orange px-3 py-2 text-md font-medium text-white drop-shadow-md duration-150 hover:opacity-100 inline-flex"
                  >
                     Get Started
                  </a>
 
                  <!-- Mobile Nav -->
-                 <div class="lg:hidden">
+                 <div class="sm:hidden">
                     <div
                        x-data="{ isOpen: false }"
                        @click.away="isOpen = false"
@@ -106,6 +106,124 @@
            </div>
         </div>
      </header>
+     <!-- Content -->
+     <main>
+        <!-- Hero Section -->
+        <section class="bg-white py-[4rem] md:py-[7rem]">
+            <div class="mx-auto max-w-[80rem] px-5 sm:px-7">
+                <div class="grid grid-cols-1  items-center gap-[1.75rem] lg:grid-cols-2">
+                   <div>
+                      <h1 class="max-w-[36rem] text-4xl font-semibold sm:text-5xl  sm:tracking-tight">
+                         Transform your business with our SaaS platform
+                      </h1>
+                      <p class="mt-5 max-w-[32rem] text-[rgb(113 113 122 / var(--tw-text-opacity))] sm:text-lg">
+                         Say goodbye to the stress of managing multiple apps and
+                         programs. Our all-in-one solution makes it easy to get
+                         everything done in one place.
+                      </p>
+                      <div class="mt-7 flex items-center gap-x-[1.75rem] ">
+                         <a
+                            href="/signup"
+                            class="border rounded-md lg:opacity-50 bg-Sd_Orange border-Sd_Orange px-3 py-2 text-md font-medium text-white drop-shadow-md duration-150 lg:hover:opacity-100 inline-flex"
+                         >
+                            Get Started
+                         </a>
+ 
+                         <a href="#" class="inline-flex items-center gap-x-[0.375rem] text-md font-medium text-black hover:text-gray-300">
+                            Learn more
+                            <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               viewBox="0 0 24 24"
+                               class="h-4 w-4"
+                            >
+                               <path
+                                  fill="currentColor"
+                                  d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2h12.172Z"
+                               />
+                            </svg>
+                         </a>
+                      </div>
+                   </div>
+ 
+                   <div class="sm:atw-spect-w-5 aspect-h-5 b-hero overflow-hidden rounded-2xl sm:aspect-h-3">
+                      <img src="../images/other/hero.jpeg" alt="" class="object-cover object-center" />
+                      <div class="absolute inset-0 rounded-2xl border border-[rgb(9 9 11 / 0.1)]"></div>
+ 
+                      <div class="flex items-end p-5">
+                         <div
+                            class="inline-flex flex-col gap-[0.375rem] rounded-xl bg-hero p-3 cf-hero ff-Nav jf-hero lf-hero duration-150 hover:zf-hero"
+                            x-data="{ companies: [ 
+                               { name: 'Trello', icon: '../images/other/trello.jpeg' },
+                               { name: 'Stripe', icon: '../images/other/adobe.jpeg' },
+                               { name: 'Adobe', icon: '../images/other/stripe.jpeg' } 
+                            ] }"
+                         >
+                            <template
+                               x-for="company in companies"
+                               :key="company.name"
+                            >
+                               <div
+                                  class="flex w-32 cursor-pointer items-center gap-[0.75rem] rounded-lg bg-white p-[0.375] bf-hero duration-150 hover:opacity-80"
+                               >
+                                  <img
+                                     x-bind:src="company.icon"
+                                     x-bind:alt="company.name"
+                                     class="h-[22px] w-[22px] rounded-md"
+                                  />
+                                  <p class="font-semibold text-sm" x-text="company.name"></p>
+                               </div>
+                            </template>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+        </section>
+        <!-- Logos Carousel Section -->
+        <section class="relative" x-data="{ logos }">
+            <div class="mx-auto max-w-[80rem] px-5 sm:px-7">
+               <div class="py-10 md:py-[3rem]">
+                  <div
+                     class="inline-flex w-full flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+                     x-data="{ scrollPosition: 0 }"
+                  >
+                     <template x-for="i in 2" :key="i">
+                        <ul
+                           aria-hidden="true"
+                           class="flex ob-hero items-center justify-center md:ml-[3.5rem] [&_img]:tw-max-w-none [&_li]:tw-mx-4 md:[&_li]:tw-mx-8"
+                        >
+                           <template
+                              x-for="company in logos"
+                              :key="company.alt"
+                           >
+                              <li>
+                                 <img
+                                    x-bind:src="company.logo"
+                                    x-bind:alt="company.alt"
+                                    class="h-8 min-w-[130px]  min-h-[25px] opacity-10 duration-150  hover:opacity-100 md:h-auto"
+                                 />
+                              </li>
+                           </template>
+                        </ul>
+                     </template>
+                  </div>
+               </div>
+            </div>
+
+            <div class="relative -mt-4">
+               <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                  <div class="w-full border-t carousel-border-color"></div>
+               </div>
+               <div class="relative flex justify-center">
+                  <div
+                     class="items-center rounded-full border border-[rgb(228 228 231 / var(--tw-border-opacity))] bg-white px-3.5 py-1.5 text-xs font-medium we-carousel df-carousel sm:px-5 sm:py-2 sm:text-sm"
+                  >
+                     We've worked with some great startups
+                  </div>
+               </div>
+            </div>
+         </section>
+     </main>
     <script>
         const menu = [
             { name: "Features", href: "#features" },
@@ -114,6 +232,27 @@
             { name: "FAQ", href: "#faq" },
             { name: "Contact us", href: "#contact-us" },
          ];
+         const logos = [
+            { alt: "AKYS CLEANING", logo: "../images/Logos/AKYS.png" },
+            { alt: "BERUS METAL", logo: "../images/Logos/BERUS Metal logo sans fond.png" },
+            { alt: "BrandCom", logo: "../images/Logos/BRAND COM.png" },
+            { alt: "CONCIERGERIE", logo: "../images/Logos/Conciergerie Validé.png" },
+            { alt: "Red fasion house", logo: "../images/Logos/fashion-1.png" },
+            { alt: "Flypool", logo: "../images/Logos/Flypool Logo.png" },
+            { alt: "Global Outlet", logo: "../images/Logos/Global.png" },
+            { alt: "Good news", logo: "../images/Logos/good news market.png" },
+            { alt: "IFCPE", logo: "../images/Logos/ifcpe.png" },
+            { alt: "JUMELLES SEDEGO", logo: "../images/Logos/Jumelle.png" },
+            { alt: "LES FRÉERES COUTURES", logo: "../images/Logos/LFC VAL-1.png" },
+            { alt: "Plaisir Culinaire", logo: "../images/Logos/Logo plaisir.png" },
+            { alt: "CONSEILS BF", logo: "../images/Logos/logo sp sans fond.png" },
+            { alt: "MULTI-SERVICES", logo: "../images/Logos/ODG.png" },
+            { alt: "RADIO VOIX DES LACS", logo: "../images/Logos/Radio la voix des Lacs logo sans fond.png" },
+            { alt: "SYMPACTIC DESIGN", logo: "../images/Logos/SD 2 logo.png" },
+            { alt: "SHALOM SERVICE SARL", logo: "../images/Logos/SIB.png" },
+            { alt: "VISION VALID", logo: "../images/Logos/VISION VALIDE.png" },
+         ];
+         
     </script>
 </body>
 </html>
