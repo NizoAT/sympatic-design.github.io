@@ -1,0 +1,1 @@
+# sympatic-design.github.io
